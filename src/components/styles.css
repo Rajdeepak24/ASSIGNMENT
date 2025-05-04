@@ -1,16 +1,18 @@
 /* Style for Lane */
 
 .todo-lane {
-  width: 30%;
-  min-height: 400px;
   background-color: #f9f9f9;
-  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  margin: 0 10px;
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease;
+}
+@media (min-width: 769px) {
+  .todo-lane {
+    width: 30%;
+    margin: 0 10px;
+  }
 }
 
 .todo-header {
@@ -20,13 +22,14 @@
   color: #333;
   border-bottom: 2px solid #ddd;
   padding-bottom: 8px;
+  text-align: center;
 }
 
 /* style for todo card */
 
 .todo-card {
   background-color: #fff;
-  margin: 10px 0;
+  margin: 10px 10px;
   padding: 15px 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -37,7 +40,7 @@
 .todoCard-edit-title {
   padding: 8px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 96%;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
@@ -45,7 +48,7 @@
 
 .todoCard-edit-textArea {
   padding: 8px;
-  width: 100%;
+  width: 96%;
   border: 1px solid #ccc;
   border-radius: 6px;
   resize: vertical;
@@ -95,11 +98,14 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .todo-form-input {
   padding: 10px;
-  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 40%;
@@ -108,7 +114,6 @@
 
 .todo-form-description {
   padding: 10px;
-  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 40%;
@@ -124,4 +129,48 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+}
+
+/* ========== Responsive Styles ========== */
+
+@media (max-width: 768px) {
+  .todo-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .todo-form-input,
+  .todo-form-description {
+    width: 100%;
+  }
+
+  .todo-form-addTodoBtn {
+    width: 100%;
+  }
+
+  .todo-lane {
+    width: 96%;
+    margin: 10px 0;
+  }
+
+  .todo-header {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .todo-card {
+    font-size: 14px;
+  }
+
+  .todoCard-edit-title,
+  .todoCard-edit-textArea {
+    font-size: 14px;
+  }
+
+  .todoCard-saveBtn,
+  .todoCard-edit,
+  .todoCard-delete {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }
